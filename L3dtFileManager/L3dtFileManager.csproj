@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{56D38616-BFDD-42BD-9459-533121FD5A80}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>L3dtFileManager</RootNamespace>
+    <AssemblyName>L3dtFileManager</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MiscUtil-r285, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d3c42c4bfacf7596, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>libs\MiscUtil-r285.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.6.3.13283, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\NUnit 2.6.3\bin\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AbstractManager.cs" />
+    <Compile Include="Amf\AmfFile.cs" />
+    <Compile Include="Amf\AmfManager.cs" />
+    <Compile Include="Amf\AmfManagerTest.cs" />
+    <Compile Include="Amf\AmfPixelInfo.cs" />
+    <Compile Include="Dmf\DmfFile.cs" />
+    <Compile Include="Dmf\DmfManager.cs" />
+    <Compile Include="Dmf\DmfManagerTest.cs" />
+    <Compile Include="Dmf\DmfPixelInfo.cs" />
+    <Compile Include="Hff\HffFile.cs" />
+    <Compile Include="Hff\HffHeader.cs" />
+    <Compile Include="Hff\HffManager.cs" />
+    <Compile Include="Hff\HffManagerTest.cs" />
+    <Compile Include="Hff\HffPixelInfo.cs" />
+    <Compile Include="Hfz\HfzFile.cs" />
+    <Compile Include="Hfz\HfzExtHeaderBlock.cs" />
+    <Compile Include="Hfz\HfzHeader.cs" />
+    <Compile Include="Hfz\HfzTile.cs" />
+    <Compile Include="Hfz\HfzManager.cs" />
+    <Compile Include="L3dtFileManager.cs" />
+    <Compile Include="Hfz\HfzManagerTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Util\Epsilon.cs" />
+    <Compile Include="Util\RealExtensions.cs" />
+    <Compile Include="Util\Util.cs" />
+    <Compile Include="Wmf\WmfFile.cs" />
+    <Compile Include="Wmf\WmfHeader.cs" />
+    <Compile Include="Wmf\WmfManager.cs" />
+    <Compile Include="Wmf\WmfManagerTest.cs" />
+    <Compile Include="Wmf\WmfPixelInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="c++ reference\L3DTio_WMF.cpp" />
+    <Content Include="c++ reference\libhfz.cpp" />
+    <Content Include="c++ reference\libhfz.h" />
+    <Content Include="c++ reference\loadhff.cpp" />
+    <Content Include="libs\MiscUtil-r285.dll" />
+    <Content Include="libs\nunit.framework.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="testfile\baia_mare_HF.hf2" />
+    <None Include="testfile\baia_mare_HF.hfz" />
+    <None Include="testfile\demo2_HF.hf2" />
+    <None Include="testfile\demo2_HF.hf2.gz" />
+    <None Include="testfile\fractal-16bit.hf2" />
+    <None Include="testfile\fractal-16bit.hf2.gz" />
+    <None Include="testfile\MtStHelens_10m.hf2" />
+    <None Include="testfile\MtStHelens_10m.hfz" />
+    <None Include="testfile\temp29_HF.hf2" />
+    <None Include="testfile\temp29_HF.hf2.gz" />
+    <None Include="testfile\test_512_tiled.hff" />
+    <None Include="testfile\test_AM.amf" />
+    <None Include="testfile\test_AM.amf.gz" />
+    <None Include="testfile\test_AM_bad_file_type.amf" />
+    <None Include="testfile\test_AM_bad_marker.amf" />
+    <None Include="testfile\test_DM.dmf" />
+    <None Include="testfile\test_DM_bad_file_type.dmf" />
+    <None Include="testfile\test_DM_bad_marker.dmf" />
+    <None Include="testfile\test_untiled.hff" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

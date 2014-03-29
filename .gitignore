@@ -1,0 +1,6 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/L3dtFileManager/bin/Debug
+/L3dtFileManager/obj/Debug
