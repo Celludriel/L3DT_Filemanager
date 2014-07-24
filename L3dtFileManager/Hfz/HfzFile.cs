@@ -12,6 +12,8 @@ namespace L3dtFileManager.Hfz
     {
         public HfzHeader header = null;
         public Dictionary<short, HfzTile> mapData = null;
+        public Nullable<float> maxHeight = null;
+        public Nullable<float> minHeight = null;
 
         public float getPixelAt(uint x, uint y) 
         { 
@@ -40,42 +42,46 @@ namespace L3dtFileManager.Hfz
 
         public float getMaxHeight()
         {
-            Nullable<float> maxHeight = null;
-            Epsilon eps = new Epsilon(0.01);
-            List<short> keys = getTileKeys();
-            foreach (short key in keys)
+            if (this.maxHeight == null)
             {
-                HfzTile tile = mapData.ElementAt(key).Value;
-                List<float> tileData = tile.tileData;
-                foreach (float data in tileData)
+                Epsilon eps = new Epsilon(0.01);
+                List<short> keys = getTileKeys();
+                foreach (short key in keys)
                 {
-                    if (!maxHeight.HasValue || RealExtensions.GT(data, maxHeight.Value, eps))
+                    HfzTile tile = mapData.ElementAt(key).Value;
+                    List<float> tileData = tile.tileData;
+                    foreach (float data in tileData)
                     {
-                        maxHeight = data;
+                        if (!this.maxHeight.HasValue || RealExtensions.GT(data, this.maxHeight.Value, eps))
+                        {
+                            this.maxHeight = data;
+                        }
                     }
                 }
             }
-            return maxHeight.Value;
+            return this.maxHeight.Value;
         }
 
         public float getMinHeight()
         {
-            Nullable<float> minHeight = null;
-            Epsilon eps = new Epsilon(0.01);
-            List<short> keys = getTileKeys();
-            foreach (short key in keys)
+            if (this.minHeight == null)
             {
-                HfzTile tile = mapData.ElementAt(key).Value;
-                List<float> tileData = tile.tileData;
-                foreach (float data in tileData)
+                Epsilon eps = new Epsilon(0.01);
+                List<short> keys = getTileKeys();
+                foreach (short key in keys)
                 {
-                    if (!minHeight.HasValue || RealExtensions.LT(data, minHeight.Value, eps))
+                    HfzTile tile = mapData.ElementAt(key).Value;
+                    List<float> tileData = tile.tileData;
+                    foreach (float data in tileData)
                     {
-                        minHeight = data;
+                        if (!this.minHeight.HasValue || RealExtensions.LT(data, this.minHeight.Value, eps))
+                        {
+                            this.minHeight = data;
+                        }
                     }
                 }
             }
-            return minHeight.Value;
+            return this.minHeight.Value;
         }
 
         public HfzTile getTileData(short tileNo)
