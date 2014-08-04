@@ -7,6 +7,7 @@ using L3dtFileManager.Hff;
 using L3dtFileManager.Amf;
 using L3dtFileManager.Dmf;
 using L3dtFileManager.Wmf;
+using L3dtFileManager.L3dt;
 
 namespace L3dtFileManager
 {
@@ -19,6 +20,7 @@ namespace L3dtFileManager
         private DmfManager dmfManager = new DmfManager();
         private HffManager hffManager = new HffManager();
         private WmfManager wmfManager = new WmfManager();
+        private L3dtManager l3dtManager = new L3dtManager();
 
         public HfzFile loadHfzFile(string fileName, FileFormat format)
         {
@@ -70,5 +72,9 @@ namespace L3dtFileManager
             wmfManager.saveFile(fileName, file);
         }
 
+        public L3dtFile loadL3dtProject(string fileName)
+        {
+            return l3dtManager.loadL3dtFile(fileName);
+        }
     }
 }

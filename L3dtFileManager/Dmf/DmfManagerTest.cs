@@ -12,7 +12,7 @@ namespace L3dtFileManager.Dmf
     class DmfManagerTest
     {
         //change this to your path before running the test
-        private String pathToTestFile = "c:\\users\\n069261kds\\documents\\visual studio 2013\\Projects\\L3dtFileManager\\ClassLibrary1";
+        private String pathToTestFile = "C:\\Git\\Repos\\L3DT_Filemanager\\L3dtFileManager";
 
         [Test]
         public void DmfUnCompressedReadTest()

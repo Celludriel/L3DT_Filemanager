@@ -31,6 +31,10 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="MiscUtil">
       <HintPath>libs\MiscUtil.dll</HintPath>
@@ -68,7 +72,11 @@
     <Compile Include="Hfz\HfzManager.cs" />
     <Compile Include="L3dtFileManager.cs" />
     <Compile Include="Hfz\HfzManagerTest.cs" />
+    <Compile Include="L3dt\L3dtFile.cs" />
+    <Compile Include="L3dt\L3dtManager.cs" />
+    <Compile Include="L3dt\l3dtManagerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Run.cs" />
     <Compile Include="Util\Epsilon.cs" />
     <Compile Include="Util\RealExtensions.cs" />
     <Compile Include="Util\Util.cs" />
@@ -85,6 +93,16 @@
     <Content Include="c++ reference\loadhff.cpp" />
     <Content Include="libs\MiscUtil-r285.dll" />
     <Content Include="libs\nunit.framework.dll" />
+    <Content Include="testfile\l3dt_amf_level\l3dttest summary.html" />
+    <Content Include="testfile\l3dt_amf_level\l3dttest.def.xml" />
+    <Content Include="testfile\l3dt_amf_level\l3dttest_WBL.xml" />
+    <Content Include="testfile\l3dt_dmf_level\l3dttest summary.html" />
+    <Content Include="testfile\l3dt_dmf_level\l3dttest.def.xml" />
+    <Content Include="testfile\l3dt_hf_level\l3dttest summary.html" />
+    <Content Include="testfile\l3dt_hf_level\l3dttest.def.xml" />
+    <Content Include="testfile\l3dt_wmf_level\l3dttest summary.html" />
+    <Content Include="testfile\l3dt_wmf_level\l3dttest.def.xml" />
+    <Content Include="testfile\l3dt_wmf_level\l3dttest_WBL.xml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="testfile\baia_mare_HF.hf2" />
@@ -93,8 +111,24 @@
     <None Include="testfile\demo2_HF.hf2.gz" />
     <None Include="testfile\fractal-16bit.hf2" />
     <None Include="testfile\fractal-16bit.hf2.gz" />
+    <None Include="testfile\l3dt_amf_level\l3dttest.proj" />
+    <None Include="testfile\l3dt_amf_level\l3dttest_AM.amf.gz" />
+    <None Include="testfile\l3dt_amf_level\l3dttest_DM.dmf" />
+    <None Include="testfile\l3dt_amf_level\l3dttest_HF.hfz" />
+    <None Include="testfile\l3dt_amf_level\l3dttest_WM.wmf" />
+    <None Include="testfile\l3dt_amf_level\l3dttest_WS.hfz" />
+    <None Include="testfile\l3dt_hf_level\l3dttest.proj" />
+    <None Include="testfile\l3dt_hf_level\l3dttest_DM.dmf" />
+    <None Include="testfile\l3dt_hf_level\l3dttest_HF.hfz" />
+    <None Include="testfile\l3dt_wmf_level\l3dttest.proj" />
+    <None Include="testfile\l3dt_wmf_level\l3dttest_DM.dmf" />
+    <None Include="testfile\l3dt_wmf_level\l3dttest_HF.hfz" />
+    <None Include="testfile\l3dt_wmf_level\l3dttest_WM.wmf" />
+    <None Include="testfile\l3dt_wmf_level\l3dttest_WS.hfz" />
     <None Include="testfile\MtStHelens_10m.hf2" />
     <None Include="testfile\MtStHelens_10m.hfz" />
+    <None Include="testfile\l3dt_dmf_level\l3dttest.proj" />
+    <None Include="testfile\l3dt_dmf_level\l3dttest_DM.dmf" />
     <None Include="testfile\temp29_HF.hf2" />
     <None Include="testfile\temp29_HF.hf2.gz" />
     <None Include="testfile\test_512_tiled.hff" />
