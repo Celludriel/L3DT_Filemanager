@@ -110,10 +110,12 @@ namespace L3dtFileManager.L3dt
 
                 if (heightMapFileName.EndsWith("hfz") || heightMapFileName.EndsWith("hf2.gz") || heightMapFileName.EndsWith("hf2"))
                 {
+                    retValue.heightMapType = L3dtFile.HeightMapType.HFZ;
                     retValue.HfzFile = hfzManager.loadFile(heightMapFileName, heightMapFileName.EndsWith("hf2.gz") || heightMapFileName.EndsWith("hfz")  ? FileFormat.COMPRESSED : FileFormat.UNCOMPRESSED);
                 }
                 else if (heightMapFileName.EndsWith("hff"))
                 {
+                    retValue.heightMapType = L3dtFile.HeightMapType.HFF;
                     retValue.HffFile = hffManager.loadFile(heightMapFileName);
                 }
             }

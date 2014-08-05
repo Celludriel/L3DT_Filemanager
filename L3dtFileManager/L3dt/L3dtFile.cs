@@ -13,6 +13,9 @@ namespace L3dtFileManager.L3dt
 {
     public class L3dtFile
     {
+        public enum HeightMapType { HFF, HFZ };
+
+        public HeightMapType heightMapType;
         public HffFile HffFile;
         public HfzFile HfzFile;
         public WmfFile WmfFile;
