@@ -38,14 +38,7 @@ namespace L3dtFileManager.Amf
 
         public AmfPixelInfo getPixelAt(uint x, uint y) 
         {
-            foreach(AmfPixelInfo pixel in pixels)
-            {
-                if (pixel.x == x && pixel.y == y)
-                {
-                    return pixel;
-                }
-            }
-            throw new Exception("No pixel found at x " + x + " and y " + y);
+            return pixels.ElementAt((int)(x + (y * this.width)));
         }
 
         private void addLandTypeToDictionary(AmfPixelInfo pixel)
